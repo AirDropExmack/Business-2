@@ -33,12 +33,12 @@ app.use(cors({
 app.use(express.json());
 
 app.get("/" , (req,res)=>{
-  return res.json({msg:"Welcome to the v2 of the freelancing site"});
+  return res.json({msg:"Welcome to the v3 of the freelancing site"});
 })
 
 const checkData = zod.object({
   username : zod.string(),
-  email : zod.string(),
+  email : zod.string().email(),
   phoneNumber : zod.string().min(10).max(10),
   text : zod.string()
 })
